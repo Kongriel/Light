@@ -1,0 +1,79 @@
+---
+import Lysknap from "../components/Lysknap.astro";
+---
+
+
+
+
+<div class="container">
+    <img src="kort9.svg" alt="" class="kort">
+    <div class="tekst">
+    <h1>4 Areas around Copenhagen and 
+        over 55 beautiful light installations</h1>
+    <p>Artists have decorated the entire city, making the festival 
+        larger and Copenhagen smaller. Our goal is to illuminate
+        both the city center and local areas outside of it.</p>
+<Lysknap />
+</div>
+</div>
+
+<style>
+    .container {
+    display: flex;
+    width: 1200px;   
+    gap: 3em;
+    padding: 7rem 7.6% 3rem;
+    }
+
+    .kort {
+        width: calc(35vw - 3.8px);
+    }
+
+    .kort:hover {
+        scale: 1.008;
+      
+    }
+
+  
+
+  
+
+    .tekst {
+        color: white;
+        margin-top: 4.5em;
+
+    }
+
+    .tekst h1 {
+        font-size:calc(3.5vw - 3.8px);
+    font-weight:600;
+    letter-spacing:-.03em;
+    line-height:1;
+    color:#FBF29D;
+    }
+       .tekst p {
+    font-size:calc(1.8vw - 3.8px);
+    font-weight:500;
+    letter-spacing:0em;
+    line-height:1;
+    }
+
+
+</style>
+
+<script>
+
+ScrollReveal({
+  ///reset: true,
+  distance: "280px",
+  durationn: 2000,
+  delay: 150,
+});
+
+
+ScrollReveal().reveal(".kort", { origin: "left" });
+ScrollReveal().reveal("h1", { origin: "top" });
+ScrollReveal().reveal("p", { origin: "bottom" });
+
+
+</script>

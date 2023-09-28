@@ -1,5 +1,11 @@
 ---
-
+import Lysknap from "../components/Lysknap.astro";
+import H1 from "../components/H1.astro";
+import Neonknap from "../components/Neonknap.astro";
+import Imgkort from "../components/Imgkort.astro";
+import Kort from "../components/Kort.astro";
+import Kort2 from "../components/Kort2.astro";
+import Lysboks from "../components/Lysboks.astro";
 ---
 
 <html lang="en">
@@ -7,10 +13,26 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
+		<script src="https://unpkg.com/scrollreveal"></script>
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
 	<body>
-		<h1>Astro</h1>
+<Lysboks />
+<Kort />
+
+<H1 />
+
+	
 	</body>
 </html>
+
+<style>
+	body {
+		background-color: #0E0D0D;
+	}
+	:root {
+  --glow-color: #FBF29D;
+}
+</style>
+
