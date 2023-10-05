@@ -1,6 +1,6 @@
-<button class='glowing-btn'>
-    <span class='glowing-txt'>C<span class='faulty-letter'>L</span>ICK</span></button>
-
+<button class='glowing-btn' id="glowing-btn">
+    <span class='glowing-txt'>C<span class='faulty-letter'>L</span>ICK</span>
+</button>
 
 
 
@@ -95,7 +95,7 @@
 }
 
 .glowing-btn:hover:before {
-  filter: blur(1.5em);
+  
   opacity: 1;
 }
 
@@ -122,8 +122,9 @@
   23% {
     opacity: 1;
   }
+ 
   80% {
-    opacity: 0.5;
+    opacity: 1;
   }
   83% {
     opacity: 0.4;
@@ -212,13 +213,21 @@
     <script>
 ScrollReveal({
   ///reset: true,
-  distance: "2180px",
+  distance: "530px",
   durationn: 2000,
   delay: 150,
 });
 
 
-ScrollReveal().reveal(".glowing-btn", { origin: "bottom" });
+ScrollReveal().reveal(".glowing-btn", { origin: "top" });
+
+
+document.getElementById("glowing-btn").addEventListener("click", function () {
+  var videocontainer = document.getElementById("video-container");
+  if (videocontainer) {
+    videocontainer.scrollIntoView({ behavior: "smooth" });
+  }
+});
 
 
 </script>

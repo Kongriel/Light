@@ -1,0 +1,209 @@
+---
+import Lysknap from "../components/Lysknap.astro";
+import Lyssingle from "../components/Lyssingle.astro";
+---
+
+
+
+<div class="baggrund">
+    <img src="sunsetgarden.jpeg" alt="Sunset Garden">
+    <div class="tekst"> 
+        <li style="--farve:#ffdd1c">
+        <a href="#" data-text="&nbsp;Sunset&nbsp;Garden">&nbsp;Sunset Garden</a>
+    </li>
+    <div class="h2"> 
+        <h2>WHO: The Lightning Guys</h2>
+        <h2>Where: Vestre Kirkegaard</h2>
+        </div>
+         <Lyssingle />
+    </div>
+
+   
+</div>
+<div class="center-container" id="center-container"> 
+<div class="container">
+   
+        <p>Vestre Kirkegård is the largest cemetery in Denmark,
+and home to a wide variety of burial sites. You will find Catholic, 
+Muslim, Jewish, Faeroese, Greenlandic and several other areas here. </p>
+  
+    
+        <p>This light installation represents the setting sun, a metaphor for death, or the rising sun and new beginnings.
+Those Guys Lighting are a group of young light designers
+ and engineers from Riga, Latvia, who previously participated in 
+Copenhagen Light Festival in 2022 with their interactive installation “On the Wave of Light” along Sydbanestien in Sydhavnen.</p>
+   
+</div>
+</div>
+
+<div class="billede">
+ <img src="sunsetgarden.jpeg" alt="Sunset Garden">
+ </div>
+
+    <style> 
+
+    .billede img {
+      width: 65vw;
+        
+        
+
+
+
+  animation: border-flicker1 3.5s linear infinite;
+
+    }
+
+
+    @keyframes border-flicker1 {
+  0% {
+    opacity: 1;
+  }
+  2% {
+    opacity: 1.8;
+  }
+  4% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.9;
+  }
+    30% {
+    opacity: 1.4;
+  }
+  70% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1.4;
+  }
+}
+
+        .billede img:hover {
+        scale: 1.15;
+ 
+      transition: 0.7s;
+
+    }
+
+    .billede {
+            display: grid;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 12rem;
+     
+    
+    }
+    .baggrund {
+        position: relative;
+       width: 100vw;
+       height: 80vh;
+       font-family: Arial, sans-serif;
+       color: #fff;
+       
+       
+            
+         
+        
+    }
+
+    .center-container {
+    display: flex;
+    justify-content: center; /* Center the container horizontally */
+    align-items: center; /* Center the container vertically */
+    height: 100vh; /* Ensure container takes up the full viewport height */
+}
+
+.container {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-rows: repeat(auto-fit, minmax(80px, 1fr));
+        width: 75vw;
+ 
+
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    
+    padding: 10px;
+
+   
+}
+
+ p {
+   
+    color: white;
+   
+    font-size:1.8rem;
+}
+
+    h2 {
+        color: var(--glow-color);
+        
+    }
+
+  
+
+    .baggrund img {
+        width: 100vw;
+       height: 100vh;
+       filter: blur(10px);
+       opacity: 0.3;
+    }
+
+    .tekst {
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: -33rem;
+        gap: 1.5rem;
+    }
+
+
+ li {
+    position: relative;
+    list-style: none;
+   
+}
+
+ li a {
+    position: relative;
+    font-size: 3.3em;
+    text-decoration: none;
+    line-height:2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1.4px white;
+    font-family: lato,sans-serif;
+    font-weight: 900;
+}
+
+ li a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--farve);
+    width:0;
+    overflow: hidden;
+    transition: 0.75s;
+   
+    -webkit-text-stroke: 1px var(--farve);
+}
+
+ li a:hover::before {
+    width: 100%;
+   filter: drop-shadow(0 0 25px var(--farve));
+    cursor:none;
+    
+}
+
+
+
+    
+    </style>

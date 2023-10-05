@@ -6,6 +6,10 @@ import Imgkort from "../components/Imgkort.astro";
 import Kort from "../components/Kort.astro";
 import Kort2 from "../components/Kort2.astro";
 import Lysboks from "../components/Lysboks.astro";
+import Navbar from "../components/Navbar.astro";
+import Header from "../components/Header.astro";
+import Animation from "../components/Animation.astro";
+import Video from "../components/Video.astro";
 ---
 
 <html lang="en">
@@ -14,14 +18,20 @@ import Lysboks from "../components/Lysboks.astro";
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<script src="https://unpkg.com/scrollreveal"></script>
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
 	<body>
-<Lysboks />
-<Kort />
+		<Header />
 
-<H1 />
+
+<Animation />
+<section class="video">
+<Video />
+</section>
+
+
 
 	
 	</body>
@@ -29,10 +39,27 @@ import Lysboks from "../components/Lysboks.astro";
 
 <style>
 	body {
-		background-color: #0E0D0D;
+ background: rgb(0,0,0);
+background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(11,16,38,1) 27%, rgba(0,0,0,1) 100%); 
+		
 	}
 	:root {
   --glow-color: #FBF29D;
 }
+
+.video {
+
+
+
+}
+.to {
+	background-color: #212120;
+}
+.tre {
+
+
+}
 </style>
+
+
 

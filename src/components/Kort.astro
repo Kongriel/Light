@@ -6,7 +6,8 @@ import Lysknap from "../components/Lysknap.astro";
 
 
 <div class="container">
-    <img src="kort9.svg" alt="" class="kort">
+    
+    <img src="kort1.svg" alt="" class="kort" id="kort">
     <div class="tekst">
     <h1>4 Areas around Copenhagen and 
         over 55 beautiful light installations</h1>
@@ -23,15 +24,24 @@ import Lysknap from "../components/Lysknap.astro";
     width: 1200px;   
     gap: 3em;
     padding: 7rem 7.6% 3rem;
+
     }
 
     .kort {
         width: calc(35vw - 3.8px);
+   filter:drop-shadow(3px 2px 6px #FF00FF)
+
+
+     
+       
     }
+
+
+    
 
     .kort:hover {
         scale: 1.008;
-      
+     
     }
 
   
@@ -50,6 +60,7 @@ import Lysknap from "../components/Lysknap.astro";
     letter-spacing:-.03em;
     line-height:1;
     color:#FBF29D;
+    width:100%;
     }
        .tekst p {
     font-size:calc(1.8vw - 3.8px);
@@ -57,6 +68,8 @@ import Lysknap from "../components/Lysknap.astro";
     letter-spacing:0em;
     line-height:1;
     }
+
+  
 
 
 </style>
@@ -71,9 +84,9 @@ ScrollReveal({
 });
 
 
-ScrollReveal().reveal(".kort", { origin: "left" });
-ScrollReveal().reveal("h1", { origin: "top" });
-ScrollReveal().reveal("p", { origin: "bottom" });
+ScrollReveal().reveal("", { origin: "left" });
+ScrollReveal().reveal("", { origin: "top" });
+ScrollReveal().reveal("", { origin: "bottom" });
 
 
 </script>

@@ -1,0 +1,129 @@
+---
+import Navbar from "../components/Navbar.astro";
+---
+
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Your Logo">
+        <span class="date">3/2 - 26/2 '24</span>
+    </div>
+    <div class="right">
+    <span class="sprog">Danish</span>
+    <a href="/menu" class="burger-menu">
+        <i class='bx bx-menu' id="menu-icon"></i>
+    </a>
+    </div>
+</header>
+
+
+    <style>
+
+
+
+ header {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1em;
+    padding-left: 1em;
+position: fixed;
+width: 98%;
+top: 0;
+left: 0;
+z-index: 1000;
+}
+.right {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+.logo {
+        display: flex;
+
+     align-items: center;
+}
+
+
+
+header img {
+    width: 100px;
+}
+
+span {
+    font-size: 1.2em;
+   margin-left: 2.2em;
+   letter-spacing: 2.5px;
+white-space: nowrap;
+
+
+}
+
+
+span .date {
+  margin-top: 2rem;
+}
+
+    #menu-icon {
+  font-size: 3rem;
+}
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    color: white; /* Change the color to the one you prefer */
+    text-decoration: none; /* Remove the underline */
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    header {
+        font-size: 14px; /* Adjust the base font size for smaller screens */
+    }
+}
+
+
+
+
+
+#menu-icon.bx-menu,
+#menu-icon.bx-x {
+    font-size: 3rem;
+    transition: color 0.4s; /* Add color transition */
+}
+
+.burger-menu:hover #menu-icon.bx-menu,
+.burger-menu:hover #menu-icon.bx-x {
+    color: white; /* Change color on hover */
+}
+
+    </style>
+
+<script>
+const menuIcon = document.querySelector("#menu-icon");
+const burgerMenuLink = document.querySelector(".burger-menu");
+
+// Check the current URL to set the initial state of the menu icon
+if (window.location.pathname === '/menu') {
+  menuIcon.classList.remove("bx-menu");
+  menuIcon.classList.add("bx-x");
+}
+
+menuIcon.addEventListener("click", () => {
+  if (menuIcon.classList.contains("bx-menu")) {
+    // If the menu icon has the class "bx-menu" (indicating it's the burger icon), change the link to "/index"
+    burgerMenuLink.setAttribute("href", "/menu");
+    menuIcon.classList.remove("bx-menu");
+    menuIcon.classList.add("bx-x");
+  } else {
+    // If the menu icon has the class "bx-x" (indicating it's an "x"), change the link back to "/menu"
+    burgerMenuLink.setAttribute("href", "/index.html");
+    menuIcon.classList.remove("bx-x");
+    menuIcon.classList.add("bx-menu");
+  }
+});
+
+</script>
+
+   
