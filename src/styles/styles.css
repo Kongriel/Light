@@ -10,8 +10,8 @@
   --quaternary-color: #ff008c; /* Hover */
 
   /* Typografi */
-  --primary-font-family: "Lato", sans-serif;
-  --secondary-font-family: "Raleway", sans-serif;
+  --primary-font-family: "Lato", sans-serif; /* Headings */
+  --secondary-font-family: "Raleway", sans-serif; /* Paragrafer */
   --primary-font-size: 4rem; /* H1 */
   --secondary-font-size: 2rem; /* H2 */
   --tertiary-font-size: 1rem; /* Knapper */
