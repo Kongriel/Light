@@ -1,0 +1,172 @@
+---
+import Lysknap from "./Lysknap.astro";
+
+---
+
+<div class="hero">
+  <div id="glow"></div>
+  <div class="triangle-container"></div>
+  
+  <h1>Copehagen Light Festival</h1>
+  <div class="knap">
+  <Lysknap />
+  </div>
+</div>
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap");
+
+
+:root {
+  --gap: 0.125rem;
+  --triangle-base: 3rem;
+  --triangle-base-height: calc(1.733 * var(--triangle-base));
+  --triangle-width: calc(var(--triangle-base) - var(--gap));
+  --triangle-height: calc(var(--triangle-base-height) - var(--gap));
+  --glow-color: #adf5ff;
+}
+.knap {
+    margin-top: -11rem;
+    display: flex;
+    justify-content: center;
+}
+
+html,
+body {
+  background: #01010a;
+  height: 100%;
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  background: radial-gradient(#070a0b, #000000);
+  background-size: 400% 400%;
+  background-position: 100% 100%;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: calc(var(--gap) * 2);
+  overflow: hidden;
+  animation: bg-animation 20s alternate infinite;
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 1rem;
+  transform: translate(-50%, -50%);
+  background: #0d0c1d;
+  border-radius: 5rem;
+  box-shadow: 0 0 1rem 1rem #0d0c1d;
+  color: white;
+  font-size: 2.5rem;
+  font-family: "Bruno Ace", cursive;
+  text-align: center;
+}
+
+@keyframes bg-animation {
+  from 0% {
+    background-position: 0%;
+  }
+  to 400% {
+    background-position:  400%;
+  }
+}
+#glow {
+  position: absolute;
+  width: 50vw;
+  height: 100vw;
+  background: radial-gradient(circle closest-side, var(--glow-color), transparent);
+  animation: glow-animation 5.2s ease infinite alternate;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes glow-animation {
+  from {
+    --glow-color: #adf5ff;
+    transform: translate(-50%, -50%) scale(0.1);
+  }
+  to {
+    --glow-color: #ff6978;
+    transform: translate(-50%, -50%) scale(0.4) rotate(90deg);
+  }
+}
+.triangle-container {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), calc(var(--triangle-base) * 2 + var(--gap)));
+  width: 100%;
+  height: 100%;
+
+}
+
+.triangle-set {
+  display: inline-block;
+  position: relative;
+  width: calc(var(--triangle-base) * 2 + var(--gap));
+  height: var(--triangle-base-height);
+}
+.triangle-set--offset {
+  transform: translateX(calc(-1 * var(--triangle-base) - 0.5 * var(--gap)));
+}
+.triangle-set::before, .triangle-set::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: var(--gap);
+  border-right: var(--triangle-width) solid transparent;
+  border-left: var(--triangle-width) solid transparent;
+}
+.triangle-set::before {
+  left: calc(-1 * var(--triangle-base));
+  border-bottom: var(--triangle-height) solid #0d0c1d;
+}
+.triangle-set::after {
+  right: calc(var(--gap) * 2.5);
+  border-top: var(--triangle-height) solid #0d0c1d;
+}
+</style>
+
+<script>
+    const triangleBase = 48;
+
+const container = document.querySelector(".triangle-container");
+
+const instantiateGrid = () => {
+  container.innerHTML = '';
+  const width = document.body.clientWidth;
+  const heigth = document.body.clientHeight * 0.4;
+
+  let columns = Math.ceil(width / (triangleBase * 2)) + 1;
+  let rows = Math.ceil(heigth / triangleBase * 1.733);
+  container.style.setProperty('--columns', columns);
+
+  for (let y = 0; y < rows; y++) {
+    for (let x = 0; x < columns; x++) {
+      createTriangleSet(x + y * columns, x, y);
+    }
+  }
+}
+
+const createTriangleSet = (index, column, row) => {
+  let el = document.createElement("div");
+  el.classList.add("triangle-set");
+	if (row % 2 == 0) el.classList.add("triangle-set--offset");
+  
+  container.appendChild(el);
+}
+
+window.onresize = () => {
+  instantiateGrid();
+}
+
+instantiateGrid();
+const glow = document.body.querySelector("#glow")
+
+window.addEventListener('mousemove', (event) => {
+	glow.style.top = event.pageY + "px";
+	glow.style.left = event.pageX + "px";
+});
+</script>

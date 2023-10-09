@@ -1,0 +1,163 @@
+---
+import Click from "../components/Click.astro";
+
+---
+    <section>
+    <div class="home-content">
+      <div class="tekst">
+            <h3>Experience the Magic of</h3>
+            <h1>Copenhagen Light Festival</h1>
+            <h2>Where Colorful Art Lights Up the City</h2>
+            </div>
+            <div class="knap">
+            <Click />
+            </div>
+             </div>
+             
+        <div class="home-img">
+            <img src="Lightbulb.svg" alt="">
+       
+        </div>
+        </section>
+
+        <style>
+
+            .knap {
+                margin-top: 1rem;
+            }
+
+section {
+    height: 90vh;
+    padding: 0rem 9% 2rem;
+    display: flex;
+    justify-content: center; /* Adjusted to evenly distribute content */
+    align-items: center; /* Vertically center content */
+}
+
+.home-content h3,
+.home-content h2,
+.home-content h1 {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    justify-content: center;
+}
+
+.home-content h1 {
+    font-size: 3.6rem;
+    color: orange;
+}
+
+
+
+.home-img img {
+  
+    width: 220px;
+    animation: hover 4s ease-in-out infinite;
+    margin-top: -8rem;
+    border-radius: 0.45em;
+    background: none;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.3em;
+    font-weight: 900;
+    letter-spacing: 0.8em;
+ 
+}
+
+ img:hover {
+   scale: 1.005;
+   filter: brightness(120%);
+}
+
+
+
+@keyframes hover {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2.2rem);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+@media (max-width: 1000px) {
+        .home-content h3,
+.home-content h2,
+.home-content h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    justify-content: center;
+}
+.home-content h1 {
+    font-size: 2.5rem;
+    color: orange;
+}
+
+}
+@media (max-width: 790px) {
+    section {
+        flex-direction: column-reverse;
+        justify-content: center;
+       
+    }
+    .home-content h3,
+.home-content h2,
+.home-content h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    justify-content: center;
+   text-align: center;
+      
+}
+
+
+.home-content h1 {
+    font-size: 2rem;
+    color: orange;
+}
+.home-img img {
+    width: 170px;
+    animation: hover 4s ease-in-out infinite;
+  
+    font-weight: 900;
+    margin-top: -11em;
+ 
+    filter: drop-shadow(0px 0px 0.5em 20px white);
+}
+
+.knap {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+}
+
+
+
+        </style>
+
+        <script>
+ScrollReveal({
+  ///reset: true,
+  distance: "330px",
+  durationn: 12000,
+  delay: 150,
+});
+
+
+ScrollReveal().reveal(".home-img", { origin: "top" });
+
+
+
+        </script>

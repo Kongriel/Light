@@ -1,0 +1,98 @@
+---
+
+import Lyssingle from "../components/Lyssingle.astro";
+---
+
+
+
+<div class="baggrund">
+    
+      <div class="tekst"> 
+        <li style="--farve:#ffdd1c">
+        <a href="#" data-text="&nbsp;Gallery">&nbsp;Gallery</a>
+    </li>
+    
+    </div>
+</div>
+    <style>
+
+   .baggrund {
+    position: relative;
+    width: 100vw;
+    height: 70vh;
+    font-family: Arial, sans-serif;
+    color: #fff;
+  background-image: url("gal.svg");
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .baggrund .tekst h2 {
+        color: var(--glow-color);
+
+        
+    }
+
+  
+
+ 
+
+    .baggrund .tekst {
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+     filter: none;
+        gap: 1.5rem;
+        opacity: 1;
+   
+    }
+
+    li {
+    position: relative;
+    list-style: none;
+
+   
+}
+
+li a {
+    position: relative;
+    font-size: 6.3em;
+    text-decoration: none;
+    line-height:2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1.4px white;
+    font-family: lato,sans-serif;
+    font-weight: 900;
+        padding: .2rem;
+}
+
+li a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--farve);
+    width:0;
+    overflow: hidden;
+    transition: 0.75s;
+   
+    -webkit-text-stroke: 1px var(--farve);
+}
+
+li a:hover::before {
+    width: 100%;
+   filter: drop-shadow(0 0 25px var(--farve));
+    cursor:none;
+    
+}
+
+
+
+    </style>

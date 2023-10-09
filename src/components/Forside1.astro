@@ -1,0 +1,96 @@
+---
+import Click from "../components/Click.astro";
+import Animation from "../components/Animation.astro";
+---
+
+
+
+<div class="baggrund">
+  
+    <img src="yeforside3.svg" alt="Sunset Garden">
+  <div class="knap">
+   
+    <Click />
+    </div>
+   
+         
+    </div>
+
+    <style>
+        
+           .baggrund {
+        position: relative;
+       width: 100vw;
+       height: 100vh;
+       font-family: Arial, sans-serif;
+       color: #fff;
+     
+       
+       
+            
+         
+        
+    }
+
+    .knap {
+       
+        display: flex;
+       
+  
+        margin-top: -20.7rem;
+        margin-left: 5.7rem;
+       
+        
+        
+    }
+    .tekst {
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        gap: 1.5rem;
+     
+        z-index:1000;
+    }
+
+
+ li {
+    position: relative;
+    list-style: none;
+   
+}
+
+ li a {
+    position: relative;
+    font-size: 3.3em;
+    text-decoration: none;
+    line-height:2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1.4px white;
+    font-family: lato,sans-serif;
+    font-weight: 900;
+}
+
+ li a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--farve);
+    width:0;
+    overflow: hidden;
+    transition: 0.75s;
+   
+    -webkit-text-stroke: 1px var(--farve);
+}
+
+ li a:hover::before {
+    width: 100%;
+   filter: drop-shadow(0 0 25px var(--farve));
+    cursor:none;
+    
+}
+    </style>

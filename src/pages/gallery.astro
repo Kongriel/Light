@@ -1,0 +1,142 @@
+---
+
+import Navbar from "../components/Navbar.astro";
+import Header from "../components/Header.astro";
+import Single from "../components/Single.astro";
+import Card from "../components/Card.astro";
+import Galleryforside from "../components/Galleryforside.astro";
+import Filterknap from "../components/Filterknap.astro";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+       
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+		<meta name="generator" content={Astro.generator} />
+		<title>Menu</title>
+	</head>
+	<body>
+		<Header />
+		<Galleryforside />
+		<section class="filterknap">
+		<Filterknap />
+		<Filterknap />
+		<Filterknap />
+		<Filterknap />
+		</section>
+		<section class="cardgrid">
+        <Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		<Card />
+		
+		</section>
+
+        
+
+
+
+
+
+
+
+
+	
+	</body>
+</html>
+
+<style>
+	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background: rgb(18, 18, 18);
+}
+	body {
+	
+
+	}
+	:root {
+  --glow-color: #FBF29D;
+}
+
+.cardgrid {
+	display: grid;
+	     grid-template-columns: repeat(auto-fill, 275px);
+     gap: 3.6rem;
+	 justify-content: center;
+}
+.filterknap {
+		display: grid;
+	     grid-template-columns: 1fr 1fr 1fr 1fr;
+     gap: 3.6rem;
+	 justify-content: center;
+	 align-items: center;
+	 padding: 4rem;
+
+}
+
+@media (max-width: 937px) {
+	.filterknap {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	   
+     gap: 3.6rem;
+	 justify-content: center;
+	 align-items: center;
+	 padding: 4rem;
+
+}
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
