@@ -6,7 +6,9 @@
         <img src="../public/Knips.webp" alt="Lysinstallation ved Knippelsbro">
     </div>
     <div class="about-text">
-<a>About</a>
+     <li style="--farve:#ffdd1c">
+        <a href="#" data-text="&nbsp;About">&nbsp;About</a>
+    </li>
 <h1>COPENHAGEN LIGHT FESTIVAL</h1>
 <h2>What is Copenhagen Light Festival?</h2>
 <p>Copenhagen Light Festival is an annual light festival that transforms the quiet and cold winter darkness into a unique celebration of light art, lighting design and illumination in the center of Copenhagen.</p>
@@ -47,6 +49,45 @@ padding: 200px;
     }
     .about-text {
     text-align: center;
+}
+    li {
+    position: relative;
+    list-style: none;
+    margin-top: -3rem;
+
+   
+}
+
+li a {
+    position: relative;
+    font-size: 6.3em;
+    text-decoration: none;
+    line-height:2;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 1.4px white;
+    font-family: lato,sans-serif;
+    font-weight: 900;
+        padding: 0rem;
+}
+
+li a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--farve);
+    width:0;
+    overflow: hidden;
+    transition: 0.75s;
+   
+    -webkit-text-stroke: 1px var(--farve);
+}
+
+li a:hover::before {
+    width: 100%;
+   filter: drop-shadow(0 0 25px var(--farve));
+    cursor:none;
+    
 }
 a {
     color: var(--secondary-color);
