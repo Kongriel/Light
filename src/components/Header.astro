@@ -5,7 +5,9 @@ import Navbar from "../components/Navbar.astro";
 
 <header>
     <div class="logo">
+        <a href="index.html">
         <img src="logo.png" alt="Your Logo">
+        </a>
         <span class="date">3/2 - 26/2 '24</span>
     </div>
     <div class="right">
@@ -101,28 +103,26 @@ span .date {
     </style>
 
 <script>
-const menuIcon = document.querySelector("#menu-icon");
-const burgerMenuLink = document.querySelector(".burger-menu");
+document.addEventListener("DOMContentLoaded", function() {
+            const menuIcon = document.querySelector("#menu-icon");
 
-// Check the current URL to set the initial state of the menu icon
-if (window.location.pathname === '/menu') {
-  menuIcon.classList.remove("bx-menu");
-  menuIcon.classList.add("bx-x");
-}
+            
+            if (window.location.pathname === '/menu') {
+                menuIcon.classList.remove("bx-menu");
+                menuIcon.classList.add("bx-x");
+            }
 
-menuIcon.addEventListener("click", () => {
-  if (menuIcon.classList.contains("bx-menu")) {
-    // If the menu icon has the class "bx-menu" (indicating it's the burger icon), change the link to "/index"
-    burgerMenuLink.setAttribute("href", "/menu");
-    menuIcon.classList.remove("bx-menu");
-    menuIcon.classList.add("bx-x");
-  } else {
-    // If the menu icon has the class "bx-x" (indicating it's an "x"), change the link back to "/menu"
-    burgerMenuLink.setAttribute("href", "/index.html");
-    menuIcon.classList.remove("bx-x");
-    menuIcon.classList.add("bx-menu");
-  }
-});
+            menuIcon.addEventListener("click", function() {
+                if (menuIcon.classList.contains("bx-menu")) {
+                    
+                    window.location.href = "/menu";
+                } else {
+                    
+                    window.history.back();
+                }
+            });
+        });
+
 
 </script>
 
