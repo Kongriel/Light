@@ -1,0 +1,24 @@
+/* Definerer costum variabler */
+:root {
+  /* Gradient baggrund */
+  --primary-background: linear-gradient(to bottom, #000000, #000f20);
+
+  /* Farver */
+  --primary-color: #ffffff; /* Tekst */
+  --secondary-color: #ffda00; /* Sekundær */
+  --tertiary-color: #047dff; /* CTA */
+  --quaternary-color: #ff008c; /* Hover */
+
+  /* Typografi */
+  --primary-font-family: "Lato", sans-serif; /* Headings */
+  --secondary-font-family: "Raleway", sans-serif; /* Paragrafer */
+  --primary-font-size: 4rem; /* H1 */
+  --secondary-font-size: 2rem; /* H2 */
+  --tertiary-font-size: 1rem; /* Knapper */
+  --primary-font-weight: 800; /* H1 */
+
+  /* Typografi (mobil) */
+  --mobile-primary-font-size: 2.5rem; /* H1 */
+  --mobile-secondary-font-size: 1.25rem; /* H2 */
+  --mobile-tertiary-font-size: 0.85rem; /* Knapper */
+}
