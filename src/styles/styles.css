@@ -6,8 +6,8 @@
   /* Farver */
   --primary-color: #ffffff; /* Tekst */
   --secondary-color: #ffda00; /* Sekundær */
-  --tertiary-color: #047dff; /* CTA */
-  --quaternary-color: #ff008c; /* Hover */
+  --tertiary-color: #01ddff; /* CTA */
+  --quaternary-color: #ff00e4; /* Hover */
 
   /* Typografi */
   --primary-font-family: "Lato", sans-serif; /* Headings */
