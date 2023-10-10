@@ -104,17 +104,19 @@ span .date {
 
 <script>
 // document.addEventListener("DOMContentLoaded", function() {
+    console.log("HEJ",window.location.pathname)
             const menuIcon = document.querySelector("#menu-icon");
 
             
             if (window.location.pathname === '/menu') {
+                   console.log("GÅ TIL MENU")
                 menuIcon.classList.remove("bx-menu");
                 menuIcon.classList.add("bx-x");
             }
 
             menuIcon.addEventListener("click", function() {
                 if (menuIcon.classList.contains("bx-menu")) {
-                    
+                 
                     window.location.href = "/menu";
                 } else {
                     
