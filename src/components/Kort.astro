@@ -14,59 +14,137 @@ import Lysknap from "../components/Lysknap.astro";
     <p>Artists have decorated the entire city, making the festival 
         larger and Copenhagen smaller. Our goal is to illuminate
         both the city center and local areas outside of it.</p>
+        <div class="knap1">
 <Lysknap />
+</div>
 </div>
 </div>
 
 <style>
-    .container {
-    display: flex;
-    width: 1200px;   
-    gap: 3em;
-    padding: 7rem 7.6% 3rem;
 
+          .knap1 {
+                margin-top: 2.5rem;
+                   display: flex;
+    justify-content: center;
+    align-items: center;
+            
+            }
+   .container {
+        display: flex;
+        flex-direction: row; 
+        align-items: center; 
+        width: 100%; 
+        box-sizing: border-box; 
+        padding: 0rem 9% 2rem;
+        gap: 7rem;
+        margin-top: 3rem;
+       
+        
     }
 
     .kort {
-        width: calc(35vw - 3.8px);
-   filter:drop-shadow(3px 2px 6px #FF00FF)
-
-
-     
-       
+         /* Make the image take up full width */
+        max-width: 420px; /* Set a maximum width for the image */
+        filter: drop-shadow(3px 2px 6px #FF00FF);
     }
-
-
-    
-
-    .kort:hover {
-        scale: 1.008;
-     
-    }
-
-  
-
-  
 
     .tekst {
-        color: white;
-        margin-top: 4.5em;
 
+  
+        text-align: center; /* Center align text */
+        color: white;
+        margin-top: 2rem; /* Adjust margin as needed */
     }
 
     .tekst h1 {
-        font-size:calc(3.5vw - 3.8px);
-    font-weight:600;
-    letter-spacing:-.03em;
-    line-height:1;
-    color:#FBF29D;
-    width:100%;
+        font-size: 2.8rem; /* Adjust font size as needed */
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        color: orange;
     }
-       .tekst p {
-    font-size:calc(1.8vw - 3.8px);
-    font-weight:500;
-    letter-spacing:0em;
-    line-height:1;
+
+    .tekst p {
+        font-size: 1.5rem; /* Adjust font size as needed */
+        font-weight: 500;
+        letter-spacing: 0em;
+        line-height: 1;
+    }
+
+      @media screen and (max-width: 1000x) {
+           .kort {
+            width:360px; 
+           
+        }
+                .tekst h1 {
+        font-size: 1.95rem; 
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        color: orange;
+    }
+
+    .tekst p {
+        font-size: 1.3rem; 
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        line-height: 1;
+    }
+      }
+
+    @media screen and (max-width: 768px) {
+        
+        .container {
+            flex-direction: column; 
+           margin-top: 4.5rem;
+           justify-content: center;
+           align-items: center;
+        }
+
+        .kort {
+            width:320px; 
+           
+        }
+
+        .tekst {
+            margin-top: 0rem; 
+
+           
+          
+            justify-content: center;
+            
+        
+            
+        }
+
+            .tekst h1 {
+        font-size: 1.83rem; 
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 1;
+        color: orange;
+    }
+
+    .tekst p {
+        font-size: 1.15rem; /* Adjust font size as needed */
+        font-weight: 500;
+        letter-spacing: 0.02em;
+        line-height: 1;
+       
+    }
+       .container {
+     
+        gap: 1rem;
+    }
+          .knap1 {
+                margin-top: 1.5rem;
+                   display: flex;
+                   font-size: 1.25rem;
+    justify-content: center;
+    align-items: center;
+            
+            }
+
     }
 
   
@@ -74,19 +152,4 @@ import Lysknap from "../components/Lysknap.astro";
 
 </style>
 
-<script>
 
-ScrollReveal({
-  ///reset: true,
-  distance: "280px",
-  durationn: 2000,
-  delay: 150,
-});
-
-
-ScrollReveal().reveal("", { origin: "left" });
-ScrollReveal().reveal("", { origin: "top" });
-ScrollReveal().reveal("", { origin: "bottom" });
-
-
-</script>

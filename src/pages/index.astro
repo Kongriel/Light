@@ -28,12 +28,15 @@ import Countdown from "../components/Countdown.astro";
 
 
 <Animation />
+<section class="kort">
 <Kort />
+</section>
 <section class="video">
 <Video />
 </section>
 
 <Countdown />
+
 
 
 
@@ -58,6 +61,7 @@ img {
 
 body,
 html {
+	overflow-x: hidden;
   height: 100%;
   margin: 0;
   background-color: black;
@@ -71,13 +75,8 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(11,16,38,1) 27%, rgba
 	}
 	:root {
   --glow-color: #FBF29D;
-}
+	}
 
-.video {
-
-
-
-}
 .to {
 	background-color: #212120;
 }
