@@ -1,18 +1,22 @@
 ---
+
 const { data } = Astro.props;
 console.log(data);
+
+const header = Astro.props.header;
 ---
 
 
 
-<div id="container">
-  <button class="learn-more">
-    <span class="circle" aria-hidden="true">
-      <span class="icon arrow"></span>
-    </span>
-    <span class="button-text">{data.category}</span>
-  </button>
-</div>
+    <button class="learn-more">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+      <span class="button-text">{header}</span>
+    </button>
+
+
+
 <style>
 
     button {
@@ -29,18 +33,23 @@ console.log(data);
   font-family: inherit;
   letter-spacing: 0.05em;;
   z-index: 10000;
+ 
 
 }
 
 #container {
   position: relative;
+  
     justify-content: center;
     align-items: center;
     text-align: center;
 }
-button.learn-more {
+button .learn-more {
   width: 12rem;
   height: auto;
+   justify-content: center;
+    align-items: center;
+  
 }
 button.learn-more .circle {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -49,7 +58,7 @@ button.learn-more .circle {
   margin: 0;
   width: 3rem;
   height: 3rem;
-  background: #ffffff;
+  background: orange;
   border-radius: 1.625rem;
 }
 button.learn-more .circle .icon {
@@ -87,7 +96,7 @@ button.learn-more .button-text {
   bottom: 0;
   padding: 0.75rem 0;
   margin: 0 0 0 1.85rem;
-  color: #ffffff;
+  color: white;
   font-weight: 700;
   line-height: 1.6;
   text-align: center;
@@ -95,7 +104,7 @@ button.learn-more .button-text {
 }
 button:hover .circle {
   width: 100%;
-background: #ffdd1c;
+background: orange;
 
 }
 button:hover .circle .icon.arrow {
@@ -105,15 +114,6 @@ button:hover .circle .icon.arrow {
 button:hover .button-text {
   color: #000000;
 }
-
-
-/* Button for screens larger than 768px (adjust as needed) */
-
-
-
-
-
-
 
 
 </style>

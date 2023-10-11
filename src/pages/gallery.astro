@@ -19,6 +19,8 @@ apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im
 
 
 console.log(data);
+
+
 ---
 
 <html lang="en">
@@ -37,11 +39,10 @@ console.log(data);
 		<Header />
 		<Galleryforside />
 		<section class="filterknap">
-					{
-				data.map((show) => {
-					return 	<Filterknap data={show} />
-				})
-			}
+		<Filterknap header="Indreby" />
+		<Filterknap header=" København K" />
+		<Filterknap header="Amager" />
+		<Filterknap header="Vesterbro" />
 	
 	
 		</section>
@@ -107,7 +108,7 @@ html {
 }
 .filterknap {
 		display: grid;
-	     grid-template-columns: 1fr 1fr 1fr 1fr;
+	   grid-template-columns: 1fr 1fr 1fr 1fr;
      gap: 3.6rem;
 	 justify-content: center;
 	 align-items: center;
