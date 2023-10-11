@@ -1,13 +1,13 @@
 ---
 const { data } = Astro.props;
-console.log(data);
+
 ---
 
 
 <div class="centered">
   <div class="cards">
     <div class="card">
-     <a href="/singleview"><div class="border"></div></a> 
+     <a href={`shows/${data.slug}`}><div class="border"></div></a> 
       <div class="content"><img src={`../${data.image}`}/>
         <h2>{data.name}</h2>
         <p>{data.artist}</p>
@@ -40,11 +40,11 @@ h2 {
 }
 
 p {
-  opacity: 0.6;
+  opacity: 0.9;
   line-height: 1.5;
-    display: flex;
+  display: flex;
   justify-content: center;
-  color:white;
+  color: white;
 }
 
 .centered {

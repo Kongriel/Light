@@ -1,0 +1,248 @@
+---
+
+import Header from "../../components/Header.astro";
+import Lyssingle from "../../components/Lyssingle.astro";
+import Footer from "../../components/Footer.astro";
+
+
+export async function getStaticPaths() {
+    const data = await fetch("https://mgkdbxdslaiqhcembkpj.supabase.co/rest/v1/clf-data",
+    {
+	method: "GET",
+	headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1na2RieGRzbGFpcWhjZW1ia3BqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0OTc0ODEsImV4cCI6MjAxMjA3MzQ4MX0.rbz9t9VumdMppOR6Sloxn0K8RWFp59mV-R-vwmUVq_I"
+	},
+}
+    
+    ).then(response => response.json());
+
+    return data.map((show) => {
+        return {
+            params: { slug: show.slug },
+            props: { myData:show },
+        };
+    });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+
+
+---
+ <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+       
+		
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+		<meta name="generator" content={Astro.generator} />
+		<title>Menu</title>
+	</head>
+	<body>
+        <Header />
+		
+      <div class="baggrund">
+    <img src={`../${myData.image}`} alt="">
+    <div class="tekst">
+        <li style="--farve:#ffdd1c">
+            <a href="#" data-text={myData.name}>{myData.name}</a>
+        </li>
+        <div class="h2">
+            <h2>{myData.artist}</h2>
+            <h2>{myData.location}</h2>
+        </div>
+        <Lyssingle />
+    </div>
+</div>
+
+<div class="center-container" id="center-container">
+    <div class="container">
+        <p>{myData.description}</p>
+    </div>
+</div>
+
+<div class="billede">
+    <img src={`../${myData.image}`} alt="">
+</div>
+
+<Footer />
+		 
+<style> 
+
+     .baggrund {
+            position: relative;
+            max-width: 100vw;
+            height: 80vh;
+            font-family: Arial, sans-serif;
+            color: #fff;
+        }
+
+        .baggrund img {
+            width: 100vw;
+            height: 100vh;
+            filter: blur(10px);
+            opacity: 0.3;
+        }
+
+        .tekst {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: -33rem;
+            gap: 1.5rem;
+        }
+
+        li {
+            position: relative;
+            list-style: none;
+        }
+
+        li a {
+            position: relative;
+            font-size: 3.3em;
+            text-decoration: none;
+            line-height: 2;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: transparent;
+            -webkit-text-stroke: 1.4px white;
+            font-family: lato, sans-serif;
+            font-weight: 900;
+        }
+
+        li a::before {
+            content: attr(data-text);
+            position: absolute;
+            color: var(--farve);
+            width: 0;
+            overflow: hidden;
+            transition: 0.75s;
+            -webkit-text-stroke: 1px var(--farve);
+        }
+
+        li a:hover::before {
+            width: 100%;
+            filter: drop-shadow(0 0 25px var(--farve));
+            cursor: none;
+        }
+
+        .h2 {
+            color: var(--glow-color);
+        }
+
+        /* Container for text content */
+        .center-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+
+        .container {
+            margin-top: 4rem;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        p {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+
+        /* Image container */
+        .billede {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 12rem;
+        }
+
+        .billede img {
+            width: 65vw;
+            animation: border-flicker1 3.5s linear infinite;
+        }
+
+        .billede img:hover {
+            transform: scale(1.15);
+            transition: 0.7s;
+        }
+
+        @keyframes border-flicker1 {
+            0%, 4%, 100% {
+                opacity: 1;
+            }
+            2%, 30% {
+                opacity: 1.8;
+            }
+            8%, 70% {
+                opacity: 0.9;
+            }
+        }
+
+        /* Media query for screens with a max-width of 768px (typical tablet size) */
+        @media screen and (max-width: 768px) {
+      
+
+            .center-container {
+                padding: 1rem;
+            }
+
+            p {
+                font-size: 1.5rem;
+            }
+            li a {
+              font-size: 2.9rem;
+            }
+        }
+
+
+
+    
+    </style>
+
+
+
+
+
+
+
+	
+	</body>
+</html>
+
+<style>
+	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+	body {
+	 background: rgb(0,0,0);
+
+	}
+	:root {
+  --glow-color: #FBF29D;
+}
+</style>
