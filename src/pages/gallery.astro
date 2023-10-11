@@ -16,6 +16,8 @@ apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im
 }
 ).then(res=>res.json());
 
+
+
 console.log(data);
 ---
 
@@ -35,10 +37,13 @@ console.log(data);
 		<Header />
 		<Galleryforside />
 		<section class="filterknap">
-		<Filterknap />
-		<Filterknap />
-		<Filterknap />
-		<Filterknap />
+					{
+				data.map((show) => {
+					return 	<Filterknap data={show} />
+				})
+			}
+	
+	
 		</section>
 		<section class="cardgrid">
 			{
