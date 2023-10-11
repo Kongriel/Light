@@ -7,7 +7,7 @@ const { data } = Astro.props;
 <div class="centered">
   <div class="cards">
     <div class="card">
-     <a href={`/${data.slug}`}><div class="border"></div></a> 
+     <a href={`shows/${data.slug}`}><div class="border"></div></a> 
       <div class="content"><img src={`../${data.image}`}/>
         <h2>{data.name}</h2>
         <p>{data.artist}</p>
