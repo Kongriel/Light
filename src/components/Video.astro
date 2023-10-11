@@ -35,3 +35,20 @@
     }
 
 </style>
+<script>
+  // Add your lazy loading script here
+  const iframe = document.querySelector('iframe[data-src]');
+
+  if (iframe) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          iframe.setAttribute('src', iframe.getAttribute('data-src'));
+          observer.unobserve(iframe);
+        }
+      });
+    });
+
+    observer.observe(iframe);
+  }
+</script>

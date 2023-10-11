@@ -106,6 +106,7 @@ console.log(myData);
             gap: 1.5rem;
         }
 
+
         li {
             position: relative;
             list-style: none;
@@ -125,11 +126,12 @@ console.log(myData);
         }
 
         li a::before {
+        
             content: attr(data-text);
             position: absolute;
             color: var(--farve);
-            width: 0;
-            overflow: hidden;
+            width: 0%;
+           overflow: hidden;
             transition: 0.75s;
             -webkit-text-stroke: 1px var(--farve);
         }
@@ -138,10 +140,12 @@ console.log(myData);
             width: 100%;
             filter: drop-shadow(0 0 25px var(--farve));
             cursor: none;
+            
         }
 
         .h2 {
             color: var(--glow-color);
+            z-index: 2000;
         }
 
         /* Container for text content */
