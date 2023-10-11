@@ -3,6 +3,7 @@
 import Header1 from "../../components/Header1.astro";
 
 import Footer from "../../components/Footer.astro";
+import Pil from "../../components/Pil.astro";
 
 
 export async function getStaticPaths() {
@@ -45,6 +46,11 @@ console.log(myData);
         <Header1 />
 		
       <div class="baggrund">
+        <div class="pil">
+
+    
+        <Pil />
+            </div>
     <img src={`../../${myData.image}`} alt="">
     <div class="tekst">
         <li style="--farve:#ffdd1c">
@@ -72,7 +78,13 @@ console.log(myData);
 <Footer />
 		 
 <style> 
-
+.pil {
+   
+position: absolute;
+top: 38%;
+  padding: 0rem 9% 2rem;
+  z-index: 20000;
+}
 
     h1 {
         color:white;
