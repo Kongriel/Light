@@ -9,7 +9,17 @@ import Animation from "../components/Animation.astro";
 import Video from "../components/Video.astro";
 import Countdown from "../components/Countdown.astro";
 import Footer from "../components/Footer.astro";
+const data = await fetch("https://mgkdbxdslaiqhcembkpj.supabase.co/rest/v1/clf-data", {
+	method:"GET",
+	headers: {
+apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1na2RieGRzbGFpcWhjZW1ia3BqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0OTc0ODEsImV4cCI6MjAxMjA3MzQ4MX0.rbz9t9VumdMppOR6Sloxn0K8RWFp59mV-R-vwmUVq_I"
+	},
+}
+).then(res=>res.json());
+
+console.log(data);
 ---
+
 
 <html lang="en">
 	<head>

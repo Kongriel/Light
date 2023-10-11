@@ -1,11 +1,16 @@
+---
+const { data } = Astro.props;
+console.log(data);
+---
+
 
 <div class="centered">
   <div class="cards">
     <div class="card">
      <a href="/singleview"><div class="border"></div></a> 
-      <div class="content"><img src="../sunsetgarden.jpeg"/>
-        <h2>Sunset garden</h2>
-        <p>Those Lightning Guys</p>
+      <div class="content"><img src={data.image}/>
+        <h2>{data.name}</h2>
+        <p>{data.artist}</p>
       </div>
     </div>
 <style>
@@ -25,7 +30,7 @@ h2 {
   font-family: "Oswald", sans-serif;
   font-weight: 600;
   opacity: 0.9;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   letter-spacing: 0.125rem;
   text-transform: uppercase;
   display: flex;
