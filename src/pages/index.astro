@@ -1,17 +1,25 @@
 ---
-import Lysknap from "../components/Lysknap.astro";
-import H1 from "../components/H1.astro";
-import Neonknap from "../components/Neonknap.astro";
-import Imgkort from "../components/Imgkort.astro";
+
 import Kort from "../components/Kort.astro";
-import Kort2 from "../components/Kort2.astro";
-import Lysboks from "../components/Lysboks.astro";
-import Navbar from "../components/Navbar.astro";
+
+
+
 import Header from "../components/Header.astro";
 import Animation from "../components/Animation.astro";
 import Video from "../components/Video.astro";
 import Countdown from "../components/Countdown.astro";
+import Footer from "../components/Footer.astro";
+const data = await fetch("https://mgkdbxdslaiqhcembkpj.supabase.co/rest/v1/clf-data", {
+	method:"GET",
+	headers: {
+apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1na2RieGRzbGFpcWhjZW1ia3BqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0OTc0ODEsImV4cCI6MjAxMjA3MzQ4MX0.rbz9t9VumdMppOR6Sloxn0K8RWFp59mV-R-vwmUVq_I"
+	},
+}
+).then(res=>res.json());
+
+console.log(data);
 ---
+
 
 <html lang="en">
 	<head>
@@ -28,12 +36,16 @@ import Countdown from "../components/Countdown.astro";
 
 
 <Animation />
+<section class="kort">
 <Kort />
+</section>
 <section class="video">
 <Video />
 </section>
 
 <Countdown />
+<Footer />
+
 
 
 
@@ -58,6 +70,7 @@ img {
 
 body,
 html {
+	overflow-x: hidden;
   height: 100%;
   margin: 0;
   background-color: black;
@@ -71,18 +84,7 @@ background: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(11,16,38,1) 27%, rgba
 	}
 	:root {
   --glow-color: #FBF29D;
-}
-
-.video {
+	}
 
 
-
-}
-.to {
-	background-color: #212120;
-}
-.tre {
-
-
-}
 </style>

@@ -15,7 +15,7 @@ import Click from "../components/Click.astro";
              </div>
              
         <div class="home-img">
-            <img src="Lightbulb.svg" alt="">
+            <img src="city.svg" alt="">
        
         </div>
         </section>
@@ -23,39 +23,52 @@ import Click from "../components/Click.astro";
         <style>
 
             .knap {
-                margin-top: 1rem;
+                margin-top: 3.5rem;
+                   display: flex;
+    justify-content: center;
+    align-items: center;
+            
             }
 
 section {
-    height: 90vh;
+    height: 100vh;
     padding: 0rem 9% 2rem;
     display: flex;
     justify-content: center; /* Adjusted to evenly distribute content */
     align-items: center; /* Vertically center content */
+    gap: 5rem;
 }
+
+
 
 .home-content h3,
 .home-content h2,
 .home-content h1 {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
     font-weight: 700;
     color: white;
     margin: 0;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .home-content h1 {
-    font-size: 3.6rem;
+    font-size: 3.2rem;
     color: orange;
 }
 
 
 
+
+
+
 .home-img img {
   
-    width: 220px;
+    width: 505px;
     animation: hover 4s ease-in-out infinite;
-    margin-top: -8rem;
+    margin-top: 0rem;
     border-radius: 0.45em;
     background: none;
     font-family: "Raleway", sans-serif;
@@ -66,8 +79,8 @@ section {
 }
 
  img:hover {
-   scale: 1.005;
-   filter: brightness(125%);
+   
+   filter: brightness(115%);
 }
 
 
@@ -77,32 +90,95 @@ section {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-2.2rem);
+        transform: translateY(-0.2rem);
     }
     100% {
         transform: translateY(0);
     }
 }
-@media (max-width: 1000px) {
+
+
+@media (max-width: 1400px) {
         .home-content h3,
 .home-content h2,
 .home-content h1 {
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-weight: 700;
     color: white;
     margin: 0;
+       display: flex;
     justify-content: center;
+    align-items: center;
 }
 .home-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     color: orange;
 }
-
 }
+@media (max-width: 1267px) {
+        .home-content h3,
+.home-content h2,
+.home-content h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+       display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content h1 {
+    font-size: 2.6rem;
+    color: orange;
+}
+}
+
+
+@media (max-width: 1000px) {
+        .home-content h3,
+.home-content h2,
+.home-content h1
+ {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+       display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content h1 {
+    font-size: 2rem;
+    color: orange;
+}
+}
+
+
+@media (max-width: 953px) {
+        .home-content h3,
+.home-content h2,
+.home-content h1
+ {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin: 0;
+       display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home-content h1 {
+    font-size: 1.63rem;
+    color: orange;
+}
+}
+
+
 @media (max-width: 790px) {
     section {
         flex-direction: column-reverse;
         justify-content: center;
+        gap:1.7rem;
        
     }
     .home-content h3,
@@ -112,6 +188,7 @@ section {
     font-weight: 700;
     color: white;
     margin: 0;
+    display: flex;
     justify-content: center;
    text-align: center;
       
@@ -123,20 +200,21 @@ section {
     color: orange;
 }
 .home-img img {
-    width: 170px;
+    width: 270px;
     animation: hover 4s ease-in-out infinite;
   
     font-weight: 900;
-    margin-top: -11em;
+
  
     filter: drop-shadow(0px 0px 0.5em 20px white);
 }
 
 .knap {
-    margin-top: 4rem;
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 1.5rem;
 }
 
 
@@ -148,15 +226,7 @@ section {
         </style>
 
         <script>
-ScrollReveal({
-  ///reset: true,
-  distance: "330px",
-  durationn: 12000,
-  delay: 150,
-});
 
-
-ScrollReveal().reveal(".home-img", { origin: "top" });
 
 
 

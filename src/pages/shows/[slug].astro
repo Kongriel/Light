@@ -1,37 +1,97 @@
 ---
-import Lysknap from "../components/Lysknap.astro";
-import Lyssingle from "../components/Lyssingle.astro";
+
+import Header1 from "../../components/Header1.astro";
+
+import Footer from "../../components/Footer.astro";
+import Pil from "../../components/Pil.astro";
+
+
+export async function getStaticPaths() {
+    const data = await fetch("https://mgkdbxdslaiqhcembkpj.supabase.co/rest/v1/clf-data",
+    {
+	method: "GET",
+	headers: {
+        apikey: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1na2RieGRzbGFpcWhjZW1ia3BqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTY0OTc0ODEsImV4cCI6MjAxMjA3MzQ4MX0.rbz9t9VumdMppOR6Sloxn0K8RWFp59mV-R-vwmUVq_I"
+	},
+}
+    
+    ).then(response => response.json());
+
+    return data.map((show) => {
+        return {
+            params: { slug:show.slug },
+            props: { myData:show },
+        };
+    });
+}
+
+const { myData } = Astro.props;
+console.log(myData);
+
+
 ---
+ <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+       
+		
+		<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+        
+		<meta name="generator" content={Astro.generator} />
+		<title>Menu</title>
+	</head>
+	<body>
+        <Header1 />
+		
+      <div class="baggrund">
+        <div class="pil">
 
-
-
-<div class="baggrund">
-    <img src="../sunsetgarden.jpeg" alt="Sunset Garden">
+    
+        <Pil />
+            </div>
+    <img src={`../../${myData.image}`} alt="">
     <div class="tekst">
         <li style="--farve:#ffdd1c">
-            <a href="#" data-text="&nbsp;Sunset&nbsp;Garden">&nbsp;Sunset Garden</a>
+            <a href="#" data-text={myData.name}>{myData.name}</a>
         </li>
         <div class="h2">
-            <h2>WHO: The Lightning Guys</h2>
-            <h2>Where: Vestre Kirkegaard</h2>
+            <h2>{myData.artist}</h2>
+            <h2>{myData.location}</h2>
         </div>
-        <Lyssingle />
+     
     </div>
 </div>
 
 <div class="center-container" id="center-container">
     <div class="container">
-        <p>Vestre Kirkegård is the largest cemetery in Denmark, and home to a wide variety of burial sites. You will find Catholic, Muslim, Jewish, Faeroese, Greenlandic and several other areas here.</p>
-        <p>This light installation represents the setting sun, a metaphor for death, or the rising sun and new beginnings. Those Guys Lighting are a group of young light designers and engineers from Riga, Latvia, who previously participated in Copenhagen Light Festival in 2022 with their interactive installation “On the Wave of Light” along Sydbanestien in Sydhavnen.</p>
+        <h1>{myData.name}</h1>
+        <p>{myData.description}</p>
     </div>
-</div>
+
 
 <div class="billede">
-    <img src="../sunsetgarden.jpeg" alt="Sunset Garden">
+    <img src={`../../${myData.image}`} alt="">
 </div>
+</div>
+<Footer />
+		 
+<style> 
+.pil {
+   
+position: absolute;
+top: 38%;
+  padding: 0rem 9% 2rem;
+  z-index: 20000;
+}
 
-    <style> 
-
+    h1 {
+        color:white;
+      
+    
+        font-size: 3.5rem;
+    }
      .baggrund {
             position: relative;
             max-width: 100vw;
@@ -58,6 +118,7 @@ import Lyssingle from "../components/Lyssingle.astro";
             gap: 1.5rem;
         }
 
+
         li {
             position: relative;
             list-style: none;
@@ -77,11 +138,12 @@ import Lyssingle from "../components/Lyssingle.astro";
         }
 
         li a::before {
+        
             content: attr(data-text);
             position: absolute;
             color: var(--farve);
-            width: 0;
-            overflow: hidden;
+            width: 0%;
+           overflow: hidden;
             transition: 0.75s;
             -webkit-text-stroke: 1px var(--farve);
         }
@@ -90,31 +152,35 @@ import Lyssingle from "../components/Lyssingle.astro";
             width: 100%;
             filter: drop-shadow(0 0 25px var(--farve));
             cursor: none;
+            
         }
 
         .h2 {
             color: var(--glow-color);
+            z-index: 2000;
         }
 
         /* Container for text content */
         .center-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 2rem;
+      display: grid;
+    grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: min-content;
+  grid-row-gap: 0px;
+  grid-column-gap: 0px;
+  gap: 4rem;
+   padding: 0rem 9% 2rem;
         }
 
         .container {
-            margin-top: 4rem;
+           
             width: 100%;
             max-width: 900px;
         }
 
         p {
-            font-size: 1.8rem;
+            font-size: 1.25rem;
             margin-bottom: 1rem;
-            color: #fff;
+            color: #757575;
         }
 
         /* Image container */
@@ -126,7 +192,7 @@ import Lyssingle from "../components/Lyssingle.astro";
         }
 
         .billede img {
-            width: 65vw;
+            width: 40vw;
             animation: border-flicker1 3.5s linear infinite;
         }
 
@@ -148,11 +214,17 @@ import Lyssingle from "../components/Lyssingle.astro";
         }
 
         /* Media query for screens with a max-width of 768px (typical tablet size) */
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 885px) {
       
 
             .center-container {
-                padding: 1rem;
+                  
+      display: flex;
+   flex-direction: column;
+    
+
+  gap: 4rem;
+   padding: 0rem 9% 2rem;
             }
 
             p {
@@ -161,9 +233,52 @@ import Lyssingle from "../components/Lyssingle.astro";
             li a {
               font-size: 2.9rem;
             }
+               .billede img {
+            width: 65vw;
+            animation: border-flicker1 3.5s linear infinite;
+        }
         }
 
 
 
     
     </style>
+
+
+
+
+
+
+
+	
+	</body>
+</html>
+
+<style>
+	* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  line-height: 1.5;
+}
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+	body {
+	 background: rgb(0,0,0);
+
+	}
+	:root {
+  --glow-color: #FBF29D;
+}
+</style>

@@ -1,4 +1,4 @@
-<button class='glowing-btn' id="glowing-btn2">
+<button class='glowing-btn2' id="glowing-btn2">
     <span class='glowing-txt'>W<span class='faulty-letter'>A</span>TCH</span>
 </button>
 
@@ -9,39 +9,40 @@
 
 
 
-.glowing-btn {
+.glowing-btn2 {
   position: relative;
-  color: var(--glow-color);
+  color: hotpink;
   cursor: pointer;
   
   padding: 0.35em 0.7em;
-  border: 0.15em solid var(--glow-color);
+  border: 0.15em solid hotpink;
   border-radius: 0.45em;
   background: none;
   perspective: 2em;
   font-family: "Raleway", sans-serif;
-  font-size: 1em;
+  font-size: 1.3em;
   font-weight: 900;
   letter-spacing: 0.8em;
 
 
-  -webkit-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-    0px 0px 0.5em 0px var(--glow-color);
-  -moz-box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-    0px 0px 0.5em 0px var(--glow-color);
-  box-shadow: inset 0px 0px 0.5em 0px var(--glow-color),
-    0px 0px 0.5em 0px var(--glow-color);
+
+  -webkit-box-shadow: inset 0px 0px 0.5em 0px hotpink,
+    0px 0px 0.5em 0px hotpink;
+  -moz-box-shadow: inset 0px 0px 0.5em 0px hotpink,
+    0px 0px 0.5em 0px hotpink;
+  box-shadow: inset 0px 0px 0.5em 0px hotpink,
+    0px 0px 0.5em 0px hotpink;
   animation: border-flicker 2s linear infinite;
 }
 
 .glowing-txt {
   float: left;
   margin-right: -0.8em;
-  -webkit-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
-    0 0 0.45em var(--glow-color);
-  -moz-text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3),
-    0 0 0.45em var(--glow-color);
-  text-shadow: 0 0 0.125em hsl(0 0% 100% / 0.3), 0 0 0.45em var(--glow-color);
+  -webkit-text-shadow: 0 0 0.125em hotpink,
+    0 0 0.45em hotpink;
+  -moz-text-shadow: 0 0 0.125em hotpink,
+    0 0 0.45em hotpink;
+  text-shadow: 0 0 0.125em hotpink, 0 0 0.45em hotpink;
   animation: text-flicker 3s linear infinite;
 }
 
@@ -50,7 +51,7 @@
   animation: faulty-flicker 2s linear infinite;
 }
 
-.glowing-btn::before {
+.glowing-btn2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -60,11 +61,11 @@
   opacity: 0.7;
   filter: blur(1em);
   transform: translateY(120%) rotateX(95deg) scale(1, 0.35);
-  background: var(--glow-color);
+  background: hotpink;
   pointer-events: none;
 }
 
-.glowing-btn::after {
+.glowing-btn2::after {
   content: "";
   position: absolute;
   top: 0;
@@ -73,33 +74,33 @@
   bottom: 0;
   opacity: 0;
   z-index: -1;
-  background-color: var(--glow-color);
-  box-shadow: 0 0 2em 0.2em var(--glow-color);
+  background-color: hotpink;
+  box-shadow: 0 0 2em 0.2em hotpink;
   transition: opacity 100ms linear;
 }
 
-.glowing-btn:hover {
+.glowing-btn2:hover {
   color: rgba(0, 0, 0, 0.8);
   text-shadow: none;
   animation: none;
 }
 
-.glowing-btn:hover .glowing-txt {
+.glowing-btn2:hover .glowing-txt {
   animation: none;
 }
 
-.glowing-btn:hover .faulty-letter {
+.glowing-btn2:hover .faulty-letter {
   animation: none;
   text-shadow: none;
   opacity: 1;
 }
 
-.glowing-btn:hover:before {
+.glowing-btn2:hover:before {
   
   opacity: 1;
 }
 
-.glowing-btn:hover:after {
+.glowing-btn2:hover:after {
   opacity: 1;
 }
 
@@ -203,7 +204,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .glowing-btn{
+  .glowing-btn2{
     font-size: 1em;
   }
 }
@@ -211,15 +212,7 @@
     </style>
 
     <script>
-ScrollReveal({
-  ///reset: true,
-  distance: "530px",
-  durationn: 2000,
-  delay: 150,
-});
 
-
-ScrollReveal().reveal(".glowing-btn", { origin: "top" });
 
 
 document.getElementById("glowing-btn2").addEventListener("click", function () {
@@ -228,6 +221,8 @@ document.getElementById("glowing-btn2").addEventListener("click", function () {
     videocontainer.scrollIntoView({ behavior: "smooth" });
   }
 });
+
+
 
 
 </script>
