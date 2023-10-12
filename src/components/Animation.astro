@@ -49,6 +49,14 @@ import Forside2 from "./Forside2.astro";
         <span style="--i:17"></span>
         <span style="--i:13"></span>
         <span style="--i:28"></span>
+              <span style="--i:28"></span>
+        <span style="--i:21"></span>
+        <span style="--i:15"></span>
+        <span style="--i:13"></span>
+        <span style="--i:26"></span>
+        <span style="--i:17"></span>
+        <span style="--i:13"></span>
+        <span style="--i:28"></span>
       
     </div>
     <Forside2 />
@@ -68,6 +76,7 @@ import Forside2 from "./Forside2.astro";
     }
 
     .bubbles span {
+
         position: relative;
         width: 25px;
         height: 25px;
@@ -77,10 +86,10 @@ import Forside2 from "./Forside2.astro";
         box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
         animation: animate 16s linear infinite;
        
-        animation-duration: calc(125s / var(--i));
+        animation-duration: calc(185s / var(--i));
 
         -webkit-animation: animate 15s linear infinite;
-        -webkit-animation-duration: calc(125s / var(--i));
+        -webkit-animation-duration: calc(185s / var(--i));
     }
 
     .bubbles span:nth-child(even) {
@@ -97,7 +106,8 @@ import Forside2 from "./Forside2.astro";
         }
         100% 
         {
-            transform: translateY(-10vh) scale(0.4);
+            opacity: 0.45;
+            transform: translateY(-10vh) scale(0.35);
         }
     }
 
@@ -106,7 +116,7 @@ import Forside2 from "./Forside2.astro";
             -webkit-transform: translateY(100vh) scale(0);
         }
         100% {
-            -webkit-transform: translateY(-10vh) scale(0.4);
+            -webkit-transform: translateY(-10vh) scale(0.35);
         }
     }
 
